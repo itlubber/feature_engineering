@@ -2,6 +2,7 @@ import os
 import re
 import time
 import math
+import random
 import joblib
 import numpy as np
 import pandas as pd
@@ -26,6 +27,17 @@ def save_pickle(obj, file):
         os.makedirs(os.path.dirname(file))
         
     return joblib.dump(obj, file)
+
+
+def seed_everything(seed: int):
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+
+    # torch.manual_seed(seed)
+    # torch.cuda.manual_seed(seed)
+    # torch.backends.cudnn.deterministic = True
+    # torch.backends.cudnn.benchmark = True
 
 
 class HiveQuery:
