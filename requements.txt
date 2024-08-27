@@ -1,4 +1,11 @@
 tqdm
 numpy
 pandas
+polars
 impyla
+PyMySQL
+python_dateutil
+scorecardpipeline
+loguru
+jsonpath
+clickhouse_driver
